@@ -19,7 +19,7 @@ async function app() {
     const maskBackground = true;
     const backgroundDarkeningMask = bodyPix.toMaskImageData(segmentation, maskBackground);
 
-    const opacity = 0.7;
+    const opacity = 1;
     const maskBlurAmount = 3;
     const flipHorizontal = true;
     bodyPix.drawMask(
