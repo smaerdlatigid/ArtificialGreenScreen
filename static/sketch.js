@@ -60,7 +60,7 @@ function setup() {
     chromaSlider = createSlider(0, 25, 1);
     chromaSlider.position(20,20);
     segSlider = createSlider(0,100,50);
-    segSlider.position(140,20);
+    segSlider.position(220,20);
 }
 
 /* the arguments to the function which draws the mask onto the canvas.  See the documentation for full descriptions:
