@@ -29,7 +29,7 @@ let w, h;
 
 function preload() {
     // load the shader
-    camShader = loadShader('static/chroma.vert', 'static/chroma.frag');
+    camShader = loadShader('static/uniform.vert', 'static/uniform.frag');
 }
 
 function setup() {
