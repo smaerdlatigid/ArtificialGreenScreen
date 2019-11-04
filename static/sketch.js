@@ -34,12 +34,13 @@ function preload() {
 
 function setup() {
     
-    w = 640*2;
-    h = 480*2;
+    w = 640*1.5;
+    h = 480*1.5;
     // save the created canvas so it can be drawn on with bodypix later.
     // createCanvas(windowWidth, windowHeight);
     CANVAS = createCanvas(w, h);
     canvas = CANVAS.canvas;
+   
 
     // capture from the webcam
     capture = createCapture(VIDEO);
@@ -64,13 +65,13 @@ const flipHorizontal = true;
 const maskBlurAmount = 0;
 
 function draw() {
-
+    background(0, 255, 0);
     textSize(16);
     text(statusText, 0, 30);
     if (capture && capture.loadedmetadata && maskImage) {
         const videoFrame = capture.get(0, 0, w, h);
         // use bodyPix to draw the estimated video with the most recent mask on top of it onto the canvas.
-        bodyPix.drawMask(canvas, videoFrame.canvas, maskImage, true, maskBlurAmount, flipHorizontal);
+        bodyPix.drawMask(canvas, videoFrame.canvas, maskImage, 1-int(mouseIsPressed), maskBlurAmount, flipHorizontal);
     }
 
     // get masked out frame 
