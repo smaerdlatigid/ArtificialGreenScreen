@@ -17,6 +17,7 @@ uniform sampler2D tex1;
 
 uniform float mouseDown;
 uniform float time;
+uniform float tol;
 
 float when_eq(float x, float y) {
   return 1.0 - abs(sign(x - y));
@@ -35,5 +36,5 @@ void main() {
     
   vec4 cam = texture2D(tex0, uv);
 
-  gl_FragColor = cam + when_lt(cam,vec4(0.05,0.05,0.05,1)) * when_eq(mouseDown, 0.0) * vec4(0,1,0, 1);
+  gl_FragColor = cam + when_lt(cam,vec4(tol,tol,tol,1)) * when_eq(mouseDown, 0.0) * vec4(0,1,0, 1);
 }

@@ -14,7 +14,6 @@ let videoFrame;
 let model;
 let segmentation;
 let maskImage;
-let seg2d;
 let statusText = '';
 
 // the output canvas
@@ -26,6 +25,10 @@ let camShader;
 let shaderLayer;
 
 let w, h;
+
+// sliders
+let chromaSlider, segSlider;
+let chromaTolerance, segmentationThreshold;
 
 function preload() {
     // load the shader
@@ -52,6 +55,12 @@ function setup() {
     // shader
     shaderLayer = createGraphics(w, h, WEBGL);
     shaderLayer.noStroke();
+
+    // initialize parameters
+    chromaSlider = createSlider(0, 25, 1);
+    chromaSlider.position(20,20);
+    segSlider = createSlider(0,100,50);
+    segSlider.position(140,20);
 }
 
 /* the arguments to the function which draws the mask onto the canvas.  See the documentation for full descriptions:
@@ -81,7 +90,7 @@ function draw() {
     shaderLayer.shader(camShader);
     camShader.setUniform('tex0', c);
     camShader.setUniform('mouseDown', int(mouseIsPressed));    
-    
+    camShader.setUniform('tol', chromaSlider.value()/100 );
     shaderLayer.rect(0, 0, w, h);
     image(shaderLayer, 0, 0, w, h);
 }
@@ -119,12 +128,11 @@ https://github.com/tensorflow/tfjs-models/tree/master/body-pix#tomaskimagedata
 */
 // set the output stride to 16 or 32 for faster performance but lower accuracy.
 const outputStride = 8;
-// affects the crop size around the person.  Higher number is tighter crop and visa
-const segmentationThreshold = 0.42;
 // if the background or the person should be masked.  If set to false, masks the person.
 const maskBackground = true;
 
 async function performEstimation() {
+    segmentationThreshold = segSlider.value()/100;
     videoFrame = capture.get(0, 0,w,h);
     segmentation = await model.estimatePersonSegmentation(
         videoFrame.canvas, outputStride, segmentationThreshold);
