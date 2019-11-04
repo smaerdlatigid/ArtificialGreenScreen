@@ -29,13 +29,13 @@ let w, h;
 
 function preload() {
     // load the shader
-    camShader = loadShader('static/uniform.vert', 'static/uniform.frag');
+    camShader = loadShader('static/chroma.vert', 'static/chroma.frag');
 }
 
 function setup() {
     
-    w = 640;
-    h = 480;
+    w = 640*2;
+    h = 480*2;
     // save the created canvas so it can be drawn on with bodypix later.
     // createCanvas(windowWidth, windowHeight);
     CANVAS = createCanvas(w, h);
@@ -61,7 +61,7 @@ const maskOpacity = 1.0;
 // if the output should be flip horizontally.  This should be set to true for user facing cameras.
 const flipHorizontal = true;
 // how much to blur the mask background by.  This affects the softness of the edge.
-const maskBlurAmount = 3;
+const maskBlurAmount = 0;
 
 function draw() {
 
@@ -69,9 +69,8 @@ function draw() {
     text(statusText, 0, 30);
     if (capture && capture.loadedmetadata && maskImage) {
         const videoFrame = capture.get(0, 0, w, h);
-
         // use bodyPix to draw the estimated video with the most recent mask on top of it onto the canvas.
-        bodyPix.drawMask(canvas, videoFrame.canvas, maskImage, int(mouseIsPressed), maskBlurAmount, flipHorizontal);
+        bodyPix.drawMask(canvas, videoFrame.canvas, maskImage, true, maskBlurAmount, flipHorizontal);
     }
 
     // get masked out frame 
@@ -89,7 +88,7 @@ function draw() {
 async function loadModelAndStartEstimating() {
     setStatusText('loading the model...');
     
-    model = await bodyPix.load();
+    model = await bodyPix.load(1.00);
     
     setStatusText('');
     // start the estimation loop, separately from the drawing loop.  
@@ -118,9 +117,9 @@ https://github.com/tensorflow/tfjs-models/tree/master/body-pix#person-segmentati
 https://github.com/tensorflow/tfjs-models/tree/master/body-pix#tomaskimagedata
 */
 // set the output stride to 16 or 32 for faster performance but lower accuracy.
-const outputStride = 16;
+const outputStride = 8;
 // affects the crop size around the person.  Higher number is tighter crop and visa
-const segmentationThreshold = 0.75;
+const segmentationThreshold = 0.42;
 // if the background or the person should be masked.  If set to false, masks the person.
 const maskBackground = true;
 

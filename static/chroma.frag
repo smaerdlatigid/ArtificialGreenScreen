@@ -35,5 +35,5 @@ void main() {
     
   vec4 cam = texture2D(tex0, uv);
 
-  gl_FragColor = cam + when_lt(cam,vec4(0.1,0.1,0.1,1)) * when_eq(mouseDown,1.0) * vec4(uv.x, uv.y, uv.x, 0);
+  gl_FragColor = cam + when_lt(cam,vec4(0.05,0.05,0.05,1)) * when_eq(mouseDown, 0.0) * vec4(0,1,0, 1);
 }
