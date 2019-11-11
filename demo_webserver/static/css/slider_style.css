@@ -2,7 +2,7 @@
 
 .img-comp-container {
   position: relative;
-  height: 200px; /*should be the same height as the images*/
+  height: 420px; /*should be the same height as the images*/
 }
 
 .img-comp-img {
@@ -30,14 +30,14 @@
 }
 
 .slidecontainer {
-  width: 100%; /* Width of the outside container */
+  width: 653; /* Width of the outside container */
 }
 
 /* The slider itself */
 .slider {
   -webkit-appearance: none;  /* Override default CSS styles */
   appearance: none;
-  width: 100%; /* Full-width */
+  width: 653px; /* Full-width */
   height: 25px; /* Specified height */
   background: #d3d3d3; /* Grey background */
   outline: none; /* Remove outline */
@@ -74,8 +74,8 @@
   border-radius: 50%;
   width: 120px;
   height: 120px;  
-  top: 42%;
-  left: 40%;
+  top: 210px;
+  left: 325px;
   position: fixed; /* Sit on top of the page content */
   background-color: rgba(0,0,0,0.5); /* Black background with opacity */
   animation: spin 2s linear infinite;
