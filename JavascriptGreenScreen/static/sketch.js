@@ -98,7 +98,7 @@ function draw() {
 async function loadModelAndStartEstimating() {
     setStatusText('loading the model...');
     
-    model = await bodyPix.load(0.25);
+    model = await bodyPix.load(1.00);
     
     setStatusText('');
     // start the estimation loop, separately from the drawing loop.  
