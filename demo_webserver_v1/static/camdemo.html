@@ -1,0 +1,23 @@
+<html>
+<head>
+    <!-- Load TensorFlow.js -->
+    <script src="https://unpkg.com/@tensorflow/tfjs"></script>
+    <!-- Load BodyPix -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/body-pix"></script>
+
+    <link rel="stylesheet" href="static/css/webcam_style.css">
+</head>
+
+<body>
+    <div class="loader" id="loader"></div>
+    <div class="slidecontainer">
+        <input type="range" min="1" max="100" value="50" class="slider" id="segmentationRange">
+    </div>
+    <video autoplay playsinline muted hidden id="webcam" width="640" height="480" ></video>
+    <canvas id="canvas"></canvas>
+    
+</body>
+
+<script src="static/js/webcam.js"></script>
+<script src="static/js/slider.js"></script>
+</html>
