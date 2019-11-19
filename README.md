@@ -12,3 +12,6 @@ sudo ssh -i "DigitalDreams.pem" ubuntu@ec2-18-224-5-200.us-east-2.compute.amazon
 - demo UI, mobile optimize demo
 - mixed reality capture
 - 60 fps game capture
+- video demo
+- file upload 
+- body part segmentation

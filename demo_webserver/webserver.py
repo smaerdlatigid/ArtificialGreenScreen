@@ -1,6 +1,10 @@
 from flask import Flask, current_app
 app = Flask(__name__)
 
+@app.route('/webcam2')
+def webcam_demo2():
+    return current_app.send_static_file('camdemo2.html')
+
 @app.route('/webcam')
 def webcam_demo():
     return current_app.send_static_file('camdemo.html')
