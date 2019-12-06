@@ -4,7 +4,7 @@ Embed yourself in any application through the web
 
 Compatible with [OBS](https://obsproject.com/) and the chroma key filter
 
-Find out more here: [www.agreenscreen.com](www.agreenscreen.com)
+Find out more here: [www.agreenscreen.com](https://www.agreenscreen.com)
 
 ![](static/img/greenscreen_demo.gif)
 
