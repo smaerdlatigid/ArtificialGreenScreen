@@ -1,17 +1,12 @@
-# Virtual Green Screen
-Real time body segmentation in the browser using machine learning (tfjs)
+# Artificial Green Screen
+Real time body segmentation in the browser using machine learning
 
-Embed yourself in any application through the web
+Embed yourself in any application through the web 
 
-```
-sudo ssh -i "DigitalDreams.pem" ubuntu@ec2-18-224-5-200.us-east-2.compute.amazonaws.com
-```
+Compatible with [OBS](https://obsproject.com/) and the chroma key filter
 
-## TODO 
-- Upgrade bodypix to version 2
-- demo UI, mobile optimize demo
-- mixed reality capture
-- 60 fps game capture
-- video demo
-- file upload 
-- body part segmentation
+Find out more here: www.agreenscreen.com
+
+![](static/img/greenscreen_demo.gif)
+
+Powered by [TensorFlow](https://www.tensorflow.org/)
