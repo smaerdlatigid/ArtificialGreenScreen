@@ -1,4 +1,3 @@
-# Artificial Green Screen
 Real time body segmentation in the browser using machine learning
 
 Embed yourself in any application through the web 
