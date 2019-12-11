@@ -1,12 +1,10 @@
 Real time body segmentation in the browser using machine learning
 
-Embed yourself in any application through the web 
-
-Compatible with [OBS](https://obsproject.com/) and the chroma key filter
+Embed yourself in any video with [OBS](https://obsproject.com/) and the chroma key filter
 
 Find out more here: [www.agreenscreen.com](https://www.agreenscreen.com)
 
-Try a [demo](https://smaerdlatigid.github.io/VirtualGreenScreen/demo.html)
+## Try a [demo](https://smaerdlatigid.github.io/ArtificialGreenScreen/demo.html)
 
 ![](static/img/greenscreen_demo.gif)
 
