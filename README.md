@@ -6,8 +6,8 @@ Find out more here: [www.agreenscreen.com](https://www.agreenscreen.com)
 
 ![](static/img/greenscreen_demo.gif)
 
-Embed yourself in any video with [OBS](https://obsproject.com/) and the chroma key filter
+Embed yourself in VR with [OBS](https://obsproject.com/) and the chroma key filter
 
-![](static/image/superhot.gif)
+![](static/img/superhot.gif)
 
 Powered by [TensorFlow](https://www.tensorflow.org/)
