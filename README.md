@@ -1,6 +1,6 @@
 Real time body segmentation in the browser using machine learning
 
-Find out more here: [www.agreenscreen.com](https://www.agreenscreen.com)
+Official website: [www.agreenscreen.com](https://www.agreenscreen.com)
 
 ## Try a [demo](https://smaerdlatigid.github.io/ArtificialGreenScreen/demo.html)
 
