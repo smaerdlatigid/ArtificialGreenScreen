@@ -33,18 +33,12 @@ function colorFilter(segmentation, imgData) {
 async function app() {
 
     console.log('Loading model...');
-    // const net = await bodyPix.load({
-    //     architecture: 'ResNet50',
-    //     outputStride: 16,
-    //     quantBytes: 2
-    // });
-
     const net = await bodyPix.load({
-        architecture: 'MobileNetV1',
+        architecture: 'ResNet50',
         outputStride: 16,
-        multiplier: 1.00,
-        quantBytes: 2
-      });
+        quantBytes: 4
+    });
+
     console.log('Successfully loaded model');
 
     const webcam = await tf.data.webcam(videoElement);
