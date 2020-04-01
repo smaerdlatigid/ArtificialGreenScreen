@@ -17,7 +17,7 @@ var segmentationThreshold = 0.5;
 
 const opacity = 1;
 const maskBlurAmount = 0;
-const flipHorizontal = false;
+const flipHorizontal = true;
 let coloredPartImage; 
 
 
@@ -62,18 +62,8 @@ async function load_model(){
     console.log('Successfully loaded model');
     document.getElementById("loader").style.display = "none";
 
+    // init variables - perform one estimate
     webcam = await tf.data.webcam(videoElement);
-    img = await webcam.capture();
-    var segmentation = await net.segmentPerson(img, {
-        flipHorizontal: false,
-        internalResolution: 'medium',
-        segmentationThreshold: slider.value / 100
-    });
-    img.dispose();
-
-    coloredPartImage = bodyPix.toMask(segmentation);
-    colorFilter(segmentation, coloredPartImage);
-
     startEstimate();
 }
 
@@ -97,10 +87,7 @@ async function estimate() {
     img.dispose();
 
     coloredPartImage = bodyPix.toMask(segmentation);
-    // colorFilter(segmentation, coloredPartImage);
-
-    // bodyPix.drawMask(canvas, videoElement, coloredPartImage, opacity, maskBlurAmount, flipHorizontal);
-    //estimate();
+    // colorFilter(segmentation, coloredPartImage); // is slow!!!
 }
 
 load_model();
